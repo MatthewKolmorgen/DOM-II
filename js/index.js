@@ -86,7 +86,6 @@ document.querySelector('a').addEventListener('click', event => {
 // Stop propagation
 const noPropagation = document.querySelectorAll('p')
 noPropagation[0].addEventListener('mouseover', (element) => {
-    debugger
     noPropagation[0].style.border = '1 px solid black';
     element.stopPropagation();
 });
