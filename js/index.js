@@ -5,13 +5,13 @@ const navItem = document.querySelectorAll("nav a");
 
 
 navItem.forEach( (element) => {
-    element.addEventListener('mouseover', event => {
+    element.addEventListener('mouseover', () => {
         element.style.color = 'purple';
     });
 });
 
 navItem.forEach( (element) => {
-    element.addEventListener('mouseleave', event => {
+    element.addEventListener('mouseleave', () => {
         element.style.color = 'green';
     });
 });
@@ -22,11 +22,11 @@ navItem.forEach( (element) => {
 const funBus = document.querySelector('.intro img');
 
 
-funBus.addEventListener('click', event => {
+funBus.addEventListener('click', () => {
     funBus.style.transform = 'scale(1.5)';
 });
 
-funBus.addEventListener('dblclick', event => {
+funBus.addEventListener('dblclick', () => {
     funBus.style.transform = 'scale(1)';
 });
 
@@ -36,17 +36,17 @@ funBus.addEventListener('dblclick', event => {
 
 const logo = document.querySelector('h1');
 
-logo.addEventListener('mouseup', event => {
+logo.addEventListener('mouseup', () => {
     logo.textContent = 'I think it works!'
 })
 
-logo.addEventListener('mousedown', event => {
+logo.addEventListener('mousedown', () => {
     logo.textContent = 'Why am I Stuggling With mouseup?!?!'
 })
 
 // logo mouseover mouseout
 
-logo.addEventListener('mouseover', event => {
+logo.addEventListener('mouseover', () => {
     logo.style.color = 'blue';
 })
 
@@ -55,9 +55,38 @@ logo.addEventListener('mouseout', () => {
 })
 
 
+// keydown
+const backgroundChange = document.querySelector('body');
+
+
+backgroundChange.addEventListener('keydown', (event) => {
+    if (event.key === 'p') {
+        backgroundChange.style.backgroundColor = 'blue';
+    } else {
+        console.log('that didn\'t do anything')
+    }  
+});
+
+backgroundChange.addEventListener('keyup', (event) => {
+    if (event.key === 'p') {
+        backgroundChange.style.backgroundColor = 'white';
+    } else {
+        console.log('that didn\'t do anything')
+    }  
+});
+
 
 
 // Prevent Default Nav Items
 document.querySelector('a').addEventListener('click', event => {
     event.preventDefault()
+});
+
+
+// Stop propagation
+const noPropagation = document.querySelectorAll('p')
+noPropagation[0].addEventListener('mouseover', (element) => {
+    debugger
+    noPropagation[0].style.border = '1 px solid black';
+    element.stopPropagation();
 });
