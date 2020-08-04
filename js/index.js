@@ -17,7 +17,13 @@ navItem.forEach( (element) => {
 
 
 
-// Bus Image click
+// Bus Image click dblclick
 const funBus = document.querySelector('.intro img');
 
-funBus.addEventListener
+funBus.addEventListener('click', event => {
+    funBus.style.transform = 'scale(1.5)';
+});
+
+funBus.addEventListener('dblclick', event => {
+    funBus.style.transform = 'scale(1)';
+});
