@@ -3,6 +3,7 @@
 // Nav Itmes mouseover mouseleave
 const navItem = document.querySelectorAll("nav a");
 
+
 navItem.forEach( (element) => {
     element.addEventListener('mouseover', (event) => {
         element.style.color = 'purple';
@@ -20,6 +21,7 @@ navItem.forEach( (element) => {
 // Bus Image click dblclick
 const funBus = document.querySelector('.intro img');
 
+
 funBus.addEventListener('click', event => {
     funBus.style.transform = 'scale(1.5)';
 });
@@ -27,3 +29,20 @@ funBus.addEventListener('click', event => {
 funBus.addEventListener('dblclick', event => {
     funBus.style.transform = 'scale(1)';
 });
+
+
+
+// logo moseup mousedown
+
+const logo = document.querySelector('h1');
+
+logo.addEventListener('mouseup', event => {
+    logo.textContent = 'I think it works!'
+})
+
+logo.addEventListener('mousedown', event => {
+    logo.textContent = 'Why am I Stuggling With mouseup?!?!'
+})
+
+
+// Prevent Default Nav Items
