@@ -1,6 +1,6 @@
 // Your code goes here
 
-// Nav Itmes mouseover
+// Nav Itmes mouseover mouseleave
 const navItem = document.querySelectorAll("nav a");
 
 navItem.forEach( (element) => {
@@ -9,3 +9,15 @@ navItem.forEach( (element) => {
     });
 });
 
+navItem.forEach( (element) => {
+    element.addEventListener('mouseleave', (event) => {
+        element.style.color = 'green';
+    });
+});
+
+
+
+// Bus Image click
+const funBus = document.querySelector('.intro img');
+
+funBus.addEventListener
